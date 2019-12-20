@@ -3,9 +3,20 @@
 <head>
 </head>
 <body>
-	<script>
-		var r = Math.floor(Math.random()*2);
-		alert(r);
-	</script>
+    <div id="days_between"></div>
+    <script>
+        var time=Date.parse(new Date());
+        var lasttime=Date.parse("1989-03-28");
+        var dayDiff=parseInt((time-lasttime)/(1000*60*60*24));
+        document.getElementById("days_between").innerHTML = dayDiff;
+    </script>
+    <!-- 0/1 -->
+    <input type="button" onclick="button_click();" value="0/1" />
+    <span id="random"></span>
+    <script>
+        function button_click(){
+            document.getElementById("random").innerHTML = Math.floor(Math.random()*2);
+        }
+    </script>
 </body>
 </html>
