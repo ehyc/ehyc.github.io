@@ -4,12 +4,26 @@
     <meta name="viewport" content="initial-scale=1">
 </head>
 <body>
-    <div id="days_between"></div>
+    <div id="day"></div>
     <script>
-        var time=Date.parse(new Date());
-        var lasttime=Date.parse("1989-03-28");
-        var dayDiff=parseInt((time-lasttime)/(1000*60*60*24));
-        document.getElementById("days_between").innerHTML = dayDiff;
+        var date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        today = date.getDate();
+        day = date.getDay();
+        if((month<10)&&(today<10)){ 
+            var day_format = year.toString() + '0'+ month.toString() + '0'+ today.toString() + day.toString();
+        } else if ((month<10)&&(today>9)){
+            var day_format = year.toString() + '0'+ month.toString() + today.toString() + day.toString();
+        } else if ((month>9)&&(today<10)){
+            var day_format = year.toString() + month.toString() + '0'+ today.toString() + day.toString();
+        } else {
+            var day_format = year.toString() + month.toString() + today.toString() + day.toString();
+        }
+        now_parse = Date.parse(new Date());
+        past_parse = Date.parse("1989-03-28");
+        dayDiff = parseInt((now_parse - past_parse)/(1000*60*60*24));
+        document.getElementById("day").innerHTML = day_format + dayDiff;
     </script>
     <!-- 0/1 -->
     <input type="button" onclick="button_click();" value="0/1" />
