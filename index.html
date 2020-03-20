@@ -18,10 +18,10 @@
         <span id="week_datediff"></span>
     </div>
     <script>
-        year = (new Date).getFullYear();
-        month = (new Date).getMonth() + 1;
-        today = (new Date).getDate();
-        day = (new Date).getDay();
+        var year = (new Date).getFullYear();
+        var month = (new Date).getMonth() + 1;
+        var today = (new Date).getDate();
+        var day = (new Date).getDay();
         if((month<10)&&(today<10)){ 
             var date = year.toString() + '0'+ month.toString() + '0'+ today.toString();
         } else if ((month<10)&&(today>9)){
@@ -31,8 +31,8 @@
         } else {
             var date = year.toString() + month.toString() + today.toString();
         }
-        now_parse = Date.parse(new Date());
-        past_parse = Date.parse("1989-03-28");
+        var now_parse = Date.parse(new Date());
+        var past_parse = Date.parse("1989-03-28T00:00:00");
         var week_datediff = day.toString() + parseInt((now_parse - past_parse)/(1000*60*60*24)).toString();
         
         document.getElementById("date").innerHTML = date;
