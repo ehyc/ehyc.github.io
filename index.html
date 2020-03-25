@@ -15,7 +15,7 @@
     <div id="date"></div>
     <div>
         <span id="random" onclick="button_click();">01</span>
-        <span id="week_datediff"></span>
+        <span id="day_datediff"></span>
     </div>
     <script>
         var year = (new Date).getFullYear();
@@ -33,10 +33,10 @@
         }
         var now_parse = Date.parse(new Date());
         var past_parse = Date.parse("1989-03-28T00:00:00");
-        var week_datediff = day.toString() + parseInt((now_parse - past_parse)/(1000*60*60*24)).toString();
+        var day_datediff = day.toString() + parseInt((now_parse - past_parse)/(1000*60*60*24)).toString();
         
         document.getElementById("date").innerHTML = date;
-        document.getElementById("week_datediff").innerHTML = week_datediff;
+        document.getElementById("day_datediff").innerHTML = day_datediff;
         function button_click(){
             document.getElementById("random").innerHTML = '0' + Math.floor(Math.random()*2).toString();
         }
