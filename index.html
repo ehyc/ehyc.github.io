@@ -40,7 +40,7 @@
         document.getElementById("day").innerHTML = (new Date).getDay().toString();
         document.getElementById("date_difference").innerHTML = parseInt((now_parse - past_parse)/(1000*60*60*24)).toString();
         function button_click(){
-            document.getElementById("random").innerHTML = '0' + Math.floor(Math.random()*2).toString();
+            document.getElementById("random").innerText = '0' + Math.floor(Math.random()*2).toString();
         }
     </script>
 </body>
